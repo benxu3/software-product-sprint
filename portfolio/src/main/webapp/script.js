@@ -16,13 +16,21 @@
  * Adds a random piece of information to the page.
  */
 function addRandomInformation() {
-  const informations =
-      ['I like cats!', 'I was born in Tianjin, China!', 'I play badminton!', 'I like philosophy!'];
-
-  // Pick a random greeting.
-  const info = informations[Math.floor(Math.random() * informations.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = info;
-}
+    const informations =
+        ['I like cats!', 'I was born in Tianjin, China!', 'I play badminton!', 'I like philosophy!', 'I grew up in the Greater Toronto Area!'];
+    const images = 
+        ["images/oat.jpg", "images/tianjin.png", "images/badminton.png", "images/philosophy.avif", "images/gta.webp"];
+  
+    // Pick a random greeting.
+    let number = Math.floor(Math.random() * informations.length);
+    const info = informations[number];
+    const image = images[number];
+  
+    // Add it to the page.
+    const img = document.createElement("img");
+    img.src = image;
+    const greetingContainer = document.getElementById('greeting-container');
+    greetingContainer.innerText = info;
+    greetingContainer.appendChild(img);
+  }
+  
