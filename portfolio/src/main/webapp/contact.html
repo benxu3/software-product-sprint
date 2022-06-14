@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Ben Xu's Projects</title>
+    <title>About Ben Xu</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
@@ -18,8 +18,17 @@
             </ul>
         </div>
         <div id="content">
-            <h2>Loading...</h2>
-          </div>
+            <h2>Contact</h2>
+            <form action="/form-handler" method="POST">
+                <p>Name:</p>
+                <textarea name="name"></textarea>
+                <p>Email:</p>
+                <textarea name="email"></textarea>
+                <p>Message:</p>
+                <textarea name="message"></textarea>
+                <br/>
+                <input type="submit" />
+            </form>
     </div>
   </body>
 </html>

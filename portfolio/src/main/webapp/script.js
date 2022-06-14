@@ -13,8 +13,23 @@
 // limitations under the License.
 
 /**
+ * Fetch hard-coded string in servlet and display in page.
+ */
+
+async function hello() {
+    const responseFromHello = await fetch('/hello');
+    const jsonFromHello = await responseFromHello.json();
+
+    const helloContainer = document.getElementById('hello-container');
+    const num = Math.floor(Math.random() * jsonFromHello.length);
+    const songRec = jsonFromHello[num];
+    helloContainer.innerText = songRec;
+}
+
+/**
  * Adds a random piece of information to the page.
  */
+
 function addRandomInformation() {
     const informations =
         ['I like cats!', 'I was born in Tianjin, China!', 'I play badminton!', 'I like philosophy!', 'I grew up in the Greater Toronto Area!'];
