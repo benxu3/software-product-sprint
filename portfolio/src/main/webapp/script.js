@@ -13,16 +13,39 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Fetch hard-coded string in servlet and display in page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+async function hello() {
+    const responseFromHello = await fetch('/hello');
+    const jsonFromHello = await responseFromHello.json();
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+    const helloContainer = document.getElementById('hello-container');
+    const num = Math.floor(Math.random() * jsonFromHello.length);
+    const songRec = jsonFromHello[num];
+    helloContainer.innerText = songRec;
 }
+
+/**
+ * Adds a random piece of information to the page.
+ */
+
+function addRandomInformation() {
+    const informations =
+        ['I like cats!', 'I was born in Tianjin, China!', 'I play badminton!', 'I like philosophy!', 'I grew up in the Greater Toronto Area!'];
+    const images = 
+        ["images/oat.jpg", "images/tianjin.png", "images/badminton.png", "images/philosophy.avif", "images/gta.webp"];
+  
+    // Pick a random greeting.
+    let number = Math.floor(Math.random() * informations.length);
+    const info = informations[number];
+    const image = images[number];
+  
+    // Add it to the page.
+    const img = document.createElement("img");
+    img.src = image;
+    const greetingContainer = document.getElementById('greeting-container');
+    greetingContainer.innerText = info;
+    greetingContainer.appendChild(img);
+  }
+  

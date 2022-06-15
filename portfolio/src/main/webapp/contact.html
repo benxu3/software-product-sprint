@@ -18,17 +18,17 @@
             </ul>
         </div>
         <div id="content">
-            <h2>About</h2>
-            <p>Hi nice to meet you! 👋 My name is Ben, I'm a student at the University of Toronto studying computer science, math, and statistics.</p> 
-            <p>Click below to see song recommendations from my playlist.</p>
-            <button onclick="hello();">
-                A Random Song Recommendation! 
-            </button>
-            <p id="hello-container"></p>
-            <p>Click the button below to get to know me a bit better:</p>
-            <button onclick="addRandomInformation()">Hello</button>
-            <div id="greeting-container"></div>
-          </div>
+            <h2>Contact</h2>
+            <form action="/form-handler" method="POST">
+                <p>Name:</p>
+                <textarea name="name"></textarea>
+                <p>Email:</p>
+                <textarea name="email"></textarea>
+                <p>Message:</p>
+                <textarea name="message"></textarea>
+                <br/>
+                <input type="submit" />
+            </form>
     </div>
   </body>
 </html>
