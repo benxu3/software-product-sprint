@@ -49,3 +49,23 @@ function addRandomInformation() {
     greetingContainer.appendChild(img);
   }
   
+  function displayMessage() {
+    fetch('/list-contacts').then(response => response.json()).then((contacts) => {
+        const contactListElement = document.getElementById('contact-list');
+        contacts.forEach((contact) => {
+          contactListElement.appendChild(createMessageElement(contact));
+        })
+      });
+  }
+
+  function createMessageElement(contact) {
+    const contactElement = document.createElement('li');
+    contactElement.className = 'contact';
+  
+    const nameElement = document.createElement('span');
+    nameElement.innerText = contact.name;
+  
+    contactElement.appendChild(nameElement);
+    return contactElement;
+  }
+  
