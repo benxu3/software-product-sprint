@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="displayMessage();">
     <div id="wrapper">
         <div id="nav">
             <h2><a href="index.html">Ben Xu</a></h2>
@@ -29,6 +29,10 @@
                 <br/>
                 <input type="submit" />
             </form>
-    </div>
+            <div>
+                <h2>Previous Messages From</h2>
+                <div id="contact-list"></div>
+            </div>
+        </div>
   </body>
 </html>
