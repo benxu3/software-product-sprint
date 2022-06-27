@@ -49,7 +49,7 @@ function addRandomInformation() {
     greetingContainer.appendChild(img);
   }
   
-  function displayMessage() {
+function displayMessage() {
     fetch('/list-contacts').then(response => response.json()).then((contacts) => {
         const contactListElement = document.getElementById('contact-list');
         contacts.forEach((contact) => {
@@ -58,7 +58,7 @@ function addRandomInformation() {
       });
   }
 
-  function createMessageElement(contact) {
+function createMessageElement(contact) {
     const contactElement = document.createElement('li');
     contactElement.className = 'contact';
   
