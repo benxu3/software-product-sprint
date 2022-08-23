@@ -31,10 +31,12 @@ img {
 a, a:visited { 
     color: #000; 
     outline: 0; 
+    text-decoration: none;
 }
 
 a:hover, a:focus { 
     color: #003fff; 
+    text-decoration: none;
 }
 
 p a, p a:visited { 
