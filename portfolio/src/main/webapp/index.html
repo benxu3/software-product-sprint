@@ -28,7 +28,21 @@
             <p>Click the button below to get to know me a bit better:</p>
             <button onclick="addRandomInformation()">Hello</button>
             <div id="greeting-container"></div>
-          </div>
+
+            <p>Send me a picture!</p>
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <p>Include a message:</p>
+                <textarea name="message"></textarea>
+                <br/>
+                <p>Upload an image:</p>
+                <input type="file" name="image">
+                <br/><br/>
+                <button>Submit</button>
+            </form>
+
+            <p><a href="/list-images">Click here to see pictures other people have sent me!</a></p>
+        </div>
     </div>
   </body>
 </html>
